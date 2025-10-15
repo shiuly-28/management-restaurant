@@ -1,8 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import Lightbox from "yet-another-react-lightbox";
-import "yet-another-react-lightbox/styles.css";
 import { AuthContext } from "../context/AuthContext";
 
 const TopFoods = () => {
@@ -51,14 +49,29 @@ const TopFoods = () => {
                         viewport={{ once: true }}
                     >
                         <div className="flex-1">
-                            <img className="rounded-xl" src={item.foodImage} alt={item.name} />
+                            <img 
+                                className="rounded-xl w-full h-48 object-cover" 
+                                src={item.foodImage} 
+                                alt={item.name} 
+                            />
                             <h3 className="text-xl font-semibold mt-5">{item.name}</h3>
                             <p>🔊Category: {item.category}</p>
-                            <p className={`${darkMode ? "text-gray-600" : "text-gray-400"} text-lg`}>⭐Purchased: <span className="btn bg-amber-300 h-5 w-10 rounded-2xl">{item.purchaseCount}</span></p>
-                            <p className="text-gray-400">📒Description: {item.description}</p>
+                            <p className={`${darkMode ? "text-gray-600" : "text-gray-400"} text-lg`}>
+                                ⭐Purchased: 
+                                <span className="btn bg-amber-300 h-5 w-10 rounded-2xl ml-2">
+                                    {item.purchaseCount}
+                                </span>
+                            </p>
+                            <p className="text-gray-400">
+                                📒Description: {item.description?.substring(0, 80)}
+                                {item.description?.length > 80 && '...'}
+                            </p>
                         </div>
                         <div className="text-end">
-                            <Link to={`/foodPage/${item._id}`} className="inline-block mt-4 bg-blue-600 text-white px-4 py-2 w-full text-center rounded">
+                            <Link 
+                                to={`/foodPage/${item._id}`} 
+                                className="inline-block mt-4 bg-blue-600 text-white px-4 py-2 w-full text-center rounded hover:bg-blue-700 transition"
+                            >
                                 See More
                             </Link>
                         </div>
@@ -73,7 +86,10 @@ const TopFoods = () => {
                 transition={{ duration: 0.5, delay: 0.4 }}
                 viewport={{ once: true }}
             >
-                <Link to="/allFoods" className="bg-blue-600 text-white px-6 py-2 rounded">
+                <Link 
+                    to="/allFoods" 
+                    className="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition"
+                >
                     See All
                 </Link>
             </motion.div>
