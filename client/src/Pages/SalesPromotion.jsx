@@ -33,7 +33,7 @@ function SalesPromotion() {
 
     return (
         <section className=" py-10 px-6 rounded-lg my-10 ">
-            <h2 className="text-3xl font-bold mb-6 text-center text-yellow-800">
+            <h2 className="text-3xl font-bold mb-6 text-center text-green-500">
                 Special Sales Promotion
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-4 gap-6">

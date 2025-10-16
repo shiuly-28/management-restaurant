@@ -65,7 +65,7 @@ const Banner = () => {
 
                         <div className="absolute flex flex-col justify-center items-center h-full w-full px-10 md:px-24 text-white bg-black/40">
                             <motion.h1
-                                className="text-3xl text-center md:text-5xl font-bold"
+                                className="text-3xl text-center md:text-5xl text-green-500 font-bold"
                                 variants={textVariants}
                                 initial="hidden"
                                 animate="visible"
@@ -85,7 +85,7 @@ const Banner = () => {
                                 to="/allFoods"
                                 variants={buttonVariants}
                                 whileHover="hover"
-                                className="mt-6 btn text-center bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg"
+                                className="mt-6 btn text-center bg-green-500 hover:bg-blue-700 text-white px-6 py-2 rounded-lg"
                             >
                                 Explore All Foods
                             </MotionLink>

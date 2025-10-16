@@ -26,7 +26,7 @@ const AllFoods = () => {
             <Helmet>
                 <title>Management Resturent || allFood</title>
             </Helmet>
-            <h2 className={`${darkMode ? "text-gray-300" : "text-black"}  text-center font-bold text-3xl`}>
+            <h2 className="text-center font-bold text-3xl text-green-500">
                 All Foods ({foods.length})
             </h2>
 
@@ -54,11 +54,11 @@ const AllFoods = () => {
                             <img className="rounded-xl w-full h-48 object-cover" src={item.foodImage} alt={item.name} />
                             <h3 className="text-xl font-semibold mt-4">{item.name}</h3>
                             <p>Price: ${item.price}</p>
-                            <p>Category: <span className="text-amber-400 btn rounded-4xl bg-blue-600">{item.category}</span></p>
+                            <p>Category: <span className="text-amber-400 btn rounded-4xl text-white bg-green-600">{item.category}</span></p>
                             <p className={` text-lg`}>Description: {item.description}</p>
                             <Link
                                 to={`/foodPage/${item._id}`}
-                                className="inline-block mt-4 bg-blue-600  px-4 py-2 w-full text-center rounded"
+                                className="inline-block mt-4 bg-green-600  px-4 py-2 w-full text-white text-center rounded"
                             >
                                 See More
                             </Link>

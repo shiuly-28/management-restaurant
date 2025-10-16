@@ -13,7 +13,6 @@ const Home = () => {
 
     return (
         <div>
-
             <Banner></Banner>
             <section>
                 <TopFoods></TopFoods>
@@ -22,13 +21,13 @@ const Home = () => {
             <section>
                 <SalesPromotion></SalesPromotion>
             </section>
-            {/* <section>
+            <section>
                 <Review></Review>
-            </section> */}
-
-            <section className='mt-8'>
-                <Testimonials></Testimonials>
             </section>
+
+            {/* <section className='mt-8'>
+                <Testimonials></Testimonials>
+            </section> */}
             <section className='mt-8'>
                 <PopularCategories></PopularCategories>
             </section>

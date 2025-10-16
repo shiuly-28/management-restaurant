@@ -15,7 +15,7 @@ const PopularCategories = () => {
     return (
         <div className="py-14 ">
             <h2 className={`${darkMode ? "text-gray-300" : "text-black"} text-3xl text-center font-semibold`}>
-                <span className="text-primary mr-2">
+                <span className="text-green-500 mr-2">
                     <Typewriter
                         words={['Explore', 'Taste', 'Enjoy']}
                         loop={0}

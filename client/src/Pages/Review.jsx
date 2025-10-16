@@ -1,48 +1,97 @@
-import React from 'react';
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const reviewsData = [
-    {
-        id: 1,
-        name: 'Rina Hasan',
-        review: 'Great product quality and fast delivery. Highly recommend!',
-        rating: 5,
-    },
-    {
-        id: 2,
-        name: 'Sajib Khan',
-        review: 'Customer service was very helpful and responsive.',
-        rating: 4,
-    },
-    {
-        id: 3,
-        name: 'Anika Rahman',
-        review: 'Affordable prices and good variety of products.',
-        rating: 4,
-    },
+  {
+    id: 1,
+    name: "Rina Hasan",
+    image: "https://i.pravatar.cc/150?img=32",
+    review:
+      "Absolutely wonderful experience! The food was delicious, the ambiance was relaxing, and the staff were very professional. I’ll definitely recommend this place to my friends and family!",
+    rating: 5,
+  },
+  {
+    id: 2,
+    name: "Sajib Khan",
+    image: "https://i.pravatar.cc/150?img=12",
+    review:
+      "Customer service was very responsive. They handled my queries quickly and politely. The delivery was on time and the packaging was excellent.",
+    rating: 4,
+  },
+  {
+    id: 3,
+    name: "Anika Rahman",
+    image: "https://i.pravatar.cc/150?img=45",
+    review:
+      "I loved the variety of dishes available! The presentation of the food was beautiful, and it tasted even better. Highly satisfied!",
+    rating: 5,
+  },
+  {
+    id: 4,
+    name: "Tariq Islam",
+    image: "https://i.pravatar.cc/150?img=21",
+    review:
+      "The restaurant has a cozy vibe with top-notch service. The staff was polite, and the overall experience was beyond expectations. Would definitely visit again!",
+    rating: 5,
+  },
+
 ];
 
 function Reviews() {
-    return (
-        <section className="bg-gray-50 py-10 px-6 my-10 max-w-7xl mx-auto rounded-lg">
-            <h2 className="text-3xl font-bold mb-8 text-center text-gray-800">Customer Reviews</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                {reviewsData.map(({ id, name, review, rating }) => (
-                    <div key={id} className="bg-white p-6 rounded shadow hover:shadow-lg transition">
-                        <h3 className="font-semibold mb-2">{name}</h3>
-                        <p className="text-gray-700 mb-4">{review}</p>
-                        <div>
-                            {[...Array(rating)].map((_, i) => (
-                                <span key={i} className="text-yellow-400">&#9733;</span> // Star icon
-                            ))}
-                            {[...Array(5 - rating)].map((_, i) => (
-                                <span key={i} className="text-gray-300">&#9733;</span>
-                            ))}
-                        </div>
-                    </div>
-                ))}
+  useEffect(() => {
+    AOS.init({ duration: 1000, once: true });
+  }, []);
+
+  return (
+    <section className="py-12 px-6 my-10 rounded-lg ">
+      <h2
+        data-aos="fade-up"
+        className="text-3xl font-bold mb-10 text-center text-green-600"
+      >
+        What Our Customers Say
+      </h2>
+
+      {/* Grid - 4 cards per row */}
+      <div className="grid gap-8 grid-cols-1  lg:grid-cols-4">
+        {reviewsData.map(({ id, name, image, review, rating }) => (
+          <div
+            key={id}
+            data-aos="zoom-in"
+            className="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col"
+          >
+            <div className="flex items-center gap-4 mb-4">
+              <img
+                src={image}
+                alt={name}
+                className="w-14 h-14 rounded-full object-cover border-2 border-green-500"
+              />
+              <div>
+                <h3 className="font-semibold text-lg">{name}</h3>
+                <div>
+                  {[...Array(rating)].map((_, i) => (
+                    <span key={i} className="text-yellow-400 text-lg">
+                      ★
+                    </span>
+                  ))}
+                  {[...Array(5 - rating)].map((_, i) => (
+                    <span key={i} className="text-gray-300 text-lg">
+                      ★
+                    </span>
+                  ))}
+                </div>
+              </div>
             </div>
-        </section>
-    );
+
+            {/* Review text */}
+            <p className="text-gray-600 italic leading-relaxed flex-grow">
+              “{review}”
+            </p>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
 }
 
 export default Reviews;
