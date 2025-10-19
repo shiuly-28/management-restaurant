@@ -21,6 +21,7 @@ import MyProfile from '../Dashboard/MyProfile';
 import AddFood from '../Dashboard/AddFood';
 import MyFood from '../Dashboard/myFood';
 import MyOrders from '../Dashboard/MyOrders';
+import RestaurantMenu from '../Pages/RestaurantMenu/RestaurantMenu';
 
 
 // import Testimonials from '../Pages/Testimonials';
@@ -52,6 +53,10 @@ const router = createBrowserRouter([
             {
                 path: '/allFoods',
                 element: <AllFoods></AllFoods>
+            },
+            {
+                path: '/menu',
+                element: <RestaurantMenu></RestaurantMenu>
             },
 
             {

@@ -52,6 +52,14 @@ const Navbar = () => {
                     <FaImages /> Gallery
                 </NavLink>
             </li>
+            <li>
+                <NavLink
+                    to="/menu"
+                    className={({ isActive }) => isActive ? "text-secondary font-semibold flex items-center gap-2" : "text-green-700 hover:text-green-700 flex items-center gap-2"}
+                >
+                    <FaImages /> Menu
+                </NavLink>
+            </li>
 
             {user && (
                 <li>
