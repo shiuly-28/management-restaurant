@@ -28,7 +28,7 @@ const AllFoods = () => {
   }, [searchTerm]);
 
   return (
-    <div className="px-4 py-6">
+    <div className="px-4 py-6 mt-12">
       <Helmet>
         <title>Management Restaurant || All Foods</title>
       </Helmet>

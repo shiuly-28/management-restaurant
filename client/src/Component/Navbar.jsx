@@ -4,7 +4,7 @@ import { AuthContext } from '../context/AuthContext';
 import { toast } from 'react-toastify';
 import logoImage from '../assets/navLogo.png';
 
-// react-icons থেকে প্রয়োজনীয় আইকন ইমপোর্ট
+// react-icons
 import { FaHome, FaUtensils, FaImages, FaTachometerAlt } from 'react-icons/fa';
 
 const Navbar = () => {
@@ -31,7 +31,11 @@ const Navbar = () => {
             <li>
                 <NavLink
                     to="/"
-                    className={({ isActive }) => isActive ? "text-secondary font-semibold flex items-center gap-2" : "text-green-700 hover:text-green-700 flex items-center gap-2"}
+                    className={({ isActive }) =>
+                        isActive
+                            ? "text-secondary font-semibold flex items-center gap-2"
+                            : "text-green-700 hover:text-green-700 flex items-center gap-2"
+                    }
                 >
                     <FaHome /> Home
                 </NavLink>
@@ -39,7 +43,11 @@ const Navbar = () => {
             <li>
                 <NavLink
                     to="/allFoods"
-                    className={({ isActive }) => isActive ? "text-secondary font-semibold flex items-center gap-2" : "text-green-700 hover:text-green-700 flex items-center gap-2"}
+                    className={({ isActive }) =>
+                        isActive
+                            ? "text-secondary font-semibold flex items-center gap-2"
+                            : "text-green-700 hover:text-green-700 flex items-center gap-2"
+                    }
                 >
                     <FaUtensils /> AllFoods
                 </NavLink>
@@ -47,7 +55,11 @@ const Navbar = () => {
             <li>
                 <NavLink
                     to="/gallery"
-                    className={({ isActive }) => isActive ? "text-secondary font-semibold flex items-center gap-2" : "text-green-700 hover:text-green-700 flex items-center gap-2"}
+                    className={({ isActive }) =>
+                        isActive
+                            ? "text-secondary font-semibold flex items-center gap-2"
+                            : "text-green-700 hover:text-green-700 flex items-center gap-2"
+                    }
                 >
                     <FaImages /> Gallery
                 </NavLink>
@@ -55,7 +67,11 @@ const Navbar = () => {
             <li>
                 <NavLink
                     to="/menu"
-                    className={({ isActive }) => isActive ? "text-secondary font-semibold flex items-center gap-2" : "text-green-700 hover:text-green-700 flex items-center gap-2"}
+                    className={({ isActive }) =>
+                        isActive
+                            ? "text-secondary font-semibold flex items-center gap-2"
+                            : "text-green-700 hover:text-green-700 flex items-center gap-2"
+                    }
                 >
                     <FaImages /> Menu
                 </NavLink>
@@ -65,7 +81,11 @@ const Navbar = () => {
                 <li>
                     <NavLink
                         to="/dashboard"
-                        className={({ isActive }) => isActive ? "text-secondary font-semibold flex items-center gap-2" : "text-green-700 hover:text-green-700 flex items-center gap-2"}
+                        className={({ isActive }) =>
+                            isActive
+                                ? "text-secondary font-semibold flex items-center gap-2"
+                                : "text-green-700 hover:text-green-700 flex items-center gap-2"
+                        }
                     >
                         <FaTachometerAlt /> Dashboard
                     </NavLink>
@@ -75,8 +95,8 @@ const Navbar = () => {
     );
 
     return (
-        <div className="bg-blue-200 rounded-2xl shadow-sm sticky top-0 z-50">
-            <div className="navbar max-w-screen-xl mx-auto px-4 flex justify-between items-center">
+        <div className="fixed top-0 left-0 w-full z-50 bg-blue-200/90 backdrop-blur-md shadow-md border-b border-green-300">
+            <div className="navbar max-w-screen-xl mx-auto px-4 flex justify-between items-center py-2">
 
                 {/* Left: Logo */}
                 <div className="flex items-center gap-2">
@@ -100,26 +120,22 @@ const Navbar = () => {
                     <input onChange={handleToggle} type="checkbox" defaultChecked={theme === "dark"} className="toggle toggle-warning" />
 
                     {/* Desktop: Login/Register */}
-                    {
-                        !user && (
-                            <div className="hidden lg:flex gap-2">
-                                <Link to="/login" className="btn btn-outline btn-sm text-green-700">Login</Link>
-                                <Link to="/register" className="btn btn-outline btn-sm text-green-700">Register</Link>
-                            </div>
-                        )
-                    }
+                    {!user && (
+                        <div className="hidden lg:flex gap-2">
+                            <Link to="/login" className="btn btn-outline btn-sm text-green-700">Login</Link>
+                            <Link to="/register" className="btn btn-outline btn-sm text-green-700">Register</Link>
+                        </div>
+                    )}
 
                     {/* If logged in: Avatar + Logout */}
-                    {
-                        user && (
-                            <>
-                                <div className="tooltip tooltip-bottom" data-tip={user.displayName}>
-                                    <img src={user.photoURL} alt="User" className="w-10 h-10 rounded-full ring-2 ring-green-600" />
-                                </div>
-                                <button onClick={handleLogout} className="btn btn-outline btn-sm text-green-700 hover:btn-success">Logout</button>
-                            </>
-                        )
-                    }
+                    {user && (
+                        <>
+                            <div className="tooltip tooltip-bottom" data-tip={user.displayName}>
+                                <img src={user.photoURL} alt="User" className="w-10 h-10 rounded-full ring-2 ring-green-600" />
+                            </div>
+                            <button onClick={handleLogout} className="btn btn-outline btn-sm text-green-700 hover:btn-success">Logout</button>
+                        </>
+                    )}
 
                     {/* Mobile: Dropdown Menu */}
                     <div className="dropdown dropdown-end lg:hidden">
@@ -134,33 +150,29 @@ const Navbar = () => {
                             {navLinks}
 
                             {/* Mobile: Login/Register */}
-                            {
-                                !user && (
-                                    <>
-                                        <li className="lg:hidden">
-                                            <Link to="/login" className="btn btn-outline btn-sm text-green-700 w-full">Login</Link>
-                                        </li>
-                                        <li className="lg:hidden">
-                                            <Link to="/register" className="btn btn-outline btn-sm text-green-700 w-full">Register</Link>
-                                        </li>
-                                    </>
-                                )
-                            }
+                            {!user && (
+                                <>
+                                    <li className="lg:hidden">
+                                        <Link to="/login" className="btn btn-outline btn-sm text-green-700 w-full">Login</Link>
+                                    </li>
+                                    <li className="lg:hidden">
+                                        <Link to="/register" className="btn btn-outline btn-sm text-green-700 w-full">Register</Link>
+                                    </li>
+                                </>
+                            )}
 
                             {/* Mobile: Avatar + Logout */}
-                            {
-                                user && (
-                                    <>
-                                        <li className="lg:hidden mt-2 flex items-center gap-2">
-                                            <img src={user.photoURL} className="w-8 h-8 rounded-full ring-2 ring-green-500" alt="user" />
-                                            <span>{user.displayName}</span>
-                                        </li>
-                                        <li className="lg:hidden">
-                                            <button onClick={handleLogout} className="btn btn-sm btn-outline text-green-700 w-full">Logout</button>
-                                        </li>
-                                    </>
-                                )
-                            }
+                            {user && (
+                                <>
+                                    <li className="lg:hidden mt-2 flex items-center gap-2">
+                                        <img src={user.photoURL} className="w-8 h-8 rounded-full ring-2 ring-green-500" alt="user" />
+                                        <span>{user.displayName}</span>
+                                    </li>
+                                    <li className="lg:hidden">
+                                        <button onClick={handleLogout} className="btn btn-sm btn-outline text-green-700 w-full">Logout</button>
+                                    </li>
+                                </>
+                            )}
                         </ul>
                     </div>
                 </div>
