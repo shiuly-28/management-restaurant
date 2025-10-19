@@ -1,3 +1,140 @@
+// import React, { useEffect } from "react";
+// import AOS from "aos";
+// import "aos/dist/aos.css";
+
+// const RestaurantMenu = () => {
+//   useEffect(() => {
+//     AOS.init({ duration: 800, once: true });
+//   }, []);
+
+//   const menuItems = [
+//     {
+//       id: 1,
+//       name: "Grilled Chicken",
+//       description: "Juicy grilled chicken served with garlic sauce and veggies.",
+//       price: "$12.99",
+//       image: "https://i.ibb.co/nLLR4B9/grilled-chicken.jpg",
+//       category: "Main Course",
+//     },
+//     {
+//       id: 2,
+//       name: "Caesar Salad",
+//       description: "Crispy lettuce with parmesan, croutons, and Caesar dressing.",
+//       price: "$8.50",
+//       image: "https://i.ibb.co/1v5fqxT/caesar-salad.jpg",
+//       category: "Appetizer",
+//     },
+//     {
+//       id: 3,
+//       name: "Chocolate Lava Cake",
+//       description: "Warm chocolate cake with a molten chocolate center.",
+//       price: "$6.00",
+//       image: "https://i.ibb.co/Wtv0pLr/chocolate-lava-cake.jpg",
+//       category: "Dessert",
+//     },
+//     {
+//       id: 4,
+//       name: "Beef Burger Deluxe",
+//       description: "Grilled beef patty with melted cheese and house sauce.",
+//       price: "$10.99",
+//       image: "https://i.ibb.co/LvZ9Xnh/beef-burger.jpg",
+//       category: "Main Course",
+//     },
+//     {
+//       id: 5,
+//       name: "Margherita Pizza",
+//       description: "Classic Italian pizza with mozzarella, basil, and tomato sauce.",
+//       price: "$9.99",
+//       image: "https://i.ibb.co/vJbMZZY/margherita-pizza.jpg",
+//       category: "Main Course",
+//     },
+//     {
+//       id: 6,
+//       name: "Prawn Tempura",
+//       description: "Crispy fried prawns with light soy dipping sauce.",
+//       price: "$11.00",
+//       image: "https://i.ibb.co/q9PnPz8/prawn-tempura.jpg",
+//       category: "Appetizer",
+//     },
+//     {
+//       id: 7,
+//       name: "Pasta Alfredo",
+//       description: "Creamy fettuccine pasta with parmesan and chicken.",
+//       price: "$10.50",
+//       image: "https://i.ibb.co/QvFRxBv/pasta-alfredo.jpg",
+//       category: "Main Course",
+//     },
+//     {
+//       id: 8,
+//       name: "Fruit Smoothie",
+//       description: "Refreshing smoothie made with seasonal fruits and yogurt.",
+//       price: "$5.50",
+//       image: "https://i.ibb.co/jhz5dL3/fruit-smoothie.jpg",
+//       category: "Drinks",
+//     },
+//     {
+//       id: 9,
+//       name: "Tiramisu",
+//       description: "Classic Italian dessert layered with coffee and mascarpone cream.",
+//       price: "$7.25",
+//       image: "https://i.ibb.co/nMdwrnM/tiramisu.jpg",
+//       category: "Dessert",
+//     },
+//   ];
+
+//   return (
+//     <section className="py-16 bg-gray-50 dark:bg-gray-900">
+//       <div className="container mx-auto text-center">
+//         <h2
+//           className="text-4xl font-bold text-green-600 mb-3"
+//           data-aos="fade-up"
+//         >
+//           Our Restaurant Menu
+//         </h2>
+//         <p
+//           className="text-gray-600 dark:text-gray-300 mb-10"
+//           data-aos="fade-up"
+//           data-aos-delay="100"
+//         >
+//           Explore our handpicked dishes made with love, freshness, and flavor 🍴
+//         </p>
+
+//         <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-8 px-4">
+//           {menuItems.map((item, index) => (
+//             <div
+//               key={item.id}
+//               data-aos="zoom-in"
+//               data-aos-delay={index * 100}
+//               className="bg-white dark:bg-gray-800 rounded-2xl shadow-md hover:shadow-2xl hover:scale-105 transition transform p-5"
+//             >
+//               <img
+//                 src={item.image}
+//                 alt={item.name}
+//                 className="rounded-xl h-48 w-full object-cover mb-4 hover:opacity-90 transition"
+//               />
+//               <div className="flex justify-between items-center mb-2">
+//                 <h3 className="text-xl font-semibold text-gray-800 dark:text-white">
+//                   {item.name}
+//                 </h3>
+//                 <span className="text-green-600 font-bold">{item.price}</span>
+//               </div>
+//               <p className="text-gray-500 dark:text-gray-400 text-sm mb-3">
+//                 {item.description}
+//               </p>
+//               <span className="text-xs px-3 py-1 rounded-full bg-green-100 text-green-700 font-medium">
+//                 {item.category}
+//               </span>
+//             </div>
+//           ))}
+//         </div>
+//       </div>
+//     </section>
+//   );
+// };
+
+// export default RestaurantMenu;
+
+
 import React, { useState } from 'react';
 
 const RestaurantMenu = () => {
@@ -100,11 +237,11 @@ const RestaurantMenu = () => {
     : menuItems.filter(item => item.category === activeCategory);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 py-12 px-4">
+    <div className="min-h-screen  py-12 px-4">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="text-5xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-red-500 mb-4 tracking-wide">
+          <h1 className="text-5xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-green-500 mb-4 tracking-wide">
             আমাদের মেনু
           </h1>
           <p className="text-xl text-gray-300">স্বাদের অনন্য সমাহার</p>
@@ -118,8 +255,8 @@ const RestaurantMenu = () => {
               onClick={() => setActiveCategory(category.id)}
               className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 ${
                 activeCategory === category.id
-                  ? 'bg-gradient-to-r from-orange-500 to-red-500 text-white shadow-lg shadow-orange-500/50 scale-105'
-                  : 'bg-transparent border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white hover:scale-105'
+                  ? 'bg-gradient-to-r from-green-500 to-green-500 text-white shadow-lg shadow-green-500/50 scale-105'
+                  : 'bg-transparent border-2 border-green-500 text-green-500 hover:bg-green-500 hover:text-white hover:scale-105'
               }`}
             >
               {category.label}
@@ -132,29 +269,29 @@ const RestaurantMenu = () => {
           {filteredItems.map(item => (
             <div
               key={item.id}
-              className="bg-gray-800/50 backdrop-blur-sm rounded-2xl overflow-hidden border border-gray-700 hover:border-orange-500 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-orange-500/20 group"
+              className=" backdrop-blur-sm rounded-2xl overflow-hidden border border-gray-700 hover:border-green-500 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-green-500/20 group"
             >
               {/* Image Section */}
-              <div className="h-48 bg-gradient-to-br from-orange-500 to-red-500 flex items-center justify-center text-8xl group-hover:scale-110 transition-transform duration-300">
+              <div className="h-48 bg-gradient-to-br from-green-500 to-green-500 flex items-center justify-center text-8xl group-hover:scale-110 transition-transform duration-300">
                 {item.emoji}
               </div>
 
               {/* Content Section */}
               <div className="p-6">
                 <div className="flex justify-between items-start mb-3">
-                  <h3 className="text-2xl font-bold text-white group-hover:text-orange-400 transition-colors">
+                  <h3 className="text-2xl font-bold text-white group-hover:text-green-400 transition-colors">
                     {item.name}
                   </h3>
-                  <span className="text-2xl font-bold text-orange-500">
+                  <span className="text-2xl font-bold text-green-500">
                     {item.price} ৳
                   </span>
                 </div>
 
-                <p className="text-gray-400 mb-4 leading-relaxed">
+                <p className=" mb-4 leading-relaxed">
                   {item.description}
                 </p>
 
-                <span className="inline-block px-4 py-2 bg-orange-500/20 border border-orange-500 rounded-full text-sm text-orange-400 font-medium">
+                <span className="inline-block px-4 py-2 bg-green-500/20 border border-green-500 rounded-full text-sm text-green-400 font-medium">
                   {item.badge}
                 </span>
               </div>
