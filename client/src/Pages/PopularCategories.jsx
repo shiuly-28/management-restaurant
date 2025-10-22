@@ -17,6 +17,8 @@ const PopularCategories = () => {
     { name: "Pizza", image: "https://i.ibb.co/twWQw5mM/mixed-pizza-with-various-ingridients-140725-3790.jpg" },
     { name: "Burger", image: "https://i.ibb.co/mrxPhpWS/front-view-tasty-meat-burger-with-cheese-salad-dark-background-140725-89597.jpg" },
     { name: "Drinks", image: "https://i.ibb.co/6GD2Jtp/fresh-orange-drinks-with-sliced-lime-mint-ice-cubes-white-flowers-23-2148145375.jpg" },
+    { name: "Dessert", image: "https://i.postimg.cc/J7XWTPSV/pexels-donaldtong94-2205270.jpg" },
+    { name: "Salad", image: "https://i.postimg.cc/sXqsMLqF/bowl-salad-with-cherry-tomatoes-cherry-tomato-483785-2512.avif" },
   ];
 
   return (
@@ -36,27 +38,32 @@ const PopularCategories = () => {
         Popular Categories
       </h2>
 
-      <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-6 px-6 mt-8">
-        {categories.map((c, idx) => (
-          <motion.div
-            key={idx}
-            data-aos="fade-up"
-            className="rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all bg-base-100 cursor-pointer"
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: idx * 0.2 }}
-            viewport={{ once: true }}
-          >
-            <div className="overflow-hidden">
-              <img
-                src={c.image}
-                alt={c.name}
-                className="w-full h-40 object-cover transform transition-transform duration-500 hover:scale-110"
-              />
+      {/* Marquee Section */}
+      <div className="overflow-hidden relative mt-10">
+        <motion.div
+          className="flex gap-6"
+          animate={{ x: ["0%", "-50%"] }}
+          transition={{
+            x: { repeat: Infinity, repeatType: "loop", duration: 20, ease: "linear" }
+          }}
+        >
+          {/* Duplicate the categories to make seamless scrolling */}
+          {[...categories, ...categories].map((c, idx) => (
+            <div
+              key={idx}
+              className="min-w-[200px] rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all bg-base-100 cursor-pointer"
+            >
+              <div className="overflow-hidden">
+                <img
+                  src={c.image}
+                  alt={c.name}
+                  className="w-full h-40 object-cover transform transition-transform duration-500 hover:scale-110"
+                />
+              </div>
+              <div className="text-center py-3 font-medium text-lg">{c.name}</div>
             </div>
-            <div className="text-center py-3 font-medium text-lg">{c.name}</div>
-          </motion.div>
-        ))}
+          ))}
+        </motion.div>
       </div>
     </div>
   );
