@@ -6,6 +6,7 @@ import PopularCategories from './PopularCategories';
 import SalesPromotion from './SalesPromotion';
 import Review from './Review';
 import RestaurantHero from './RestaurantHero/RestaurantHero';
+import FreshFood from './FreshFood/FreshFood';
 
 const Home = () => {
 
@@ -25,7 +26,9 @@ const Home = () => {
             <section>
                 <RestaurantHero></RestaurantHero>
             </section>
-
+            <section>
+                <FreshFood></FreshFood>
+            </section>
             {/* <section className='mt-8'>
                 <Testimonials></Testimonials>
             </section> */}

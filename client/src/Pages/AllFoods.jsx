@@ -80,14 +80,14 @@ const AllFoods = () => {
               </div>
 
               <h3 className="text-xl font-semibold mt-4">{item.name}</h3>
-              <p className="text-gray-600 dark:text-gray-300">Price: ${item.price}</p>
-              <p className="text-gray-600 dark:text-gray-300">
+              <p className="">Price: ${item.price}</p>
+              <p className="">
                 Category:{" "}
                 <span className="text-white bg-green-600 px-3 py-1 rounded-full">
                   {item.category}
                 </span>
               </p>
-              <p className="text-gray-600 dark:text-gray-300 mt-1">
+              <p className=" mt-1">
                 {item.description.slice(0, 70)}...
               </p>
 

@@ -11,7 +11,7 @@ const RestaurantMenu = () => {
       price: "350",
       description: "Spicy chicken wings served with tangy sauce.",
       badge: "Popular",
-      emoji: "🍗",
+      image: "https://i.postimg.cc/sx8vyh49/hq720.jpg",
     },
     {
       id: 2,
@@ -20,7 +20,7 @@ const RestaurantMenu = () => {
       price: "280",
       description: "Fresh vegetables topped with special dressing.",
       badge: "Delicious",
-      emoji: "🥗",
+      image: "https://i.postimg.cc/4dyfd3dn/classic-caesar-salad-recipe.jpg",
     },
     {
       id: 3,
@@ -29,7 +29,7 @@ const RestaurantMenu = () => {
       price: "450",
       description: "Traditional clay-pot cooked biryani full of aroma.",
       badge: "Special",
-      emoji: "🍛",
+      image: "https://i.postimg.cc/8Cjkk5sh/83642760293c01d5cda61647de565577b588d74c.jpg",
     },
     {
       id: 4,
@@ -38,7 +38,7 @@ const RestaurantMenu = () => {
       price: "380",
       description: "Creamy Italian pasta served with white sauce.",
       badge: "Chef’s Choice",
-      emoji: "🍝",
+      image: "https://i.postimg.cc/fWvGFsRD/ul5fhin-pasta-625x300-28-April-22.webp",
     },
     {
       id: 5,
@@ -47,7 +47,7 @@ const RestaurantMenu = () => {
       price: "520",
       description: "Served with fresh vegetables and potato wedges.",
       badge: "Top Rated",
-      emoji: "🍖",
+      image: "https://i.postimg.cc/B6pmhqBZ/FN-Ultimate-BBQ-Chicken-s4x3.jpg",
     },
     {
       id: 6,
@@ -56,7 +56,7 @@ const RestaurantMenu = () => {
       price: "220",
       description: "Rich chocolate layered cake with ice cream.",
       badge: "Sweet",
-      emoji: "🍰",
+      image: "https://i.postimg.cc/8zwBQyrM/chocolate-cake-decorated-with-forest-fruits-blueberries-strawberries-blackberries-ai-generative-1238.avif",
     },
     {
       id: 7,
@@ -65,7 +65,7 @@ const RestaurantMenu = () => {
       price: "250",
       description: "Classic French-style creamy custard dessert.",
       badge: "Premium",
-      emoji: "🍮",
+      image: "https://i.postimg.cc/gkzxFGyw/Vanilla-Creme-Brulee.avif",
     },
     {
       id: 8,
@@ -74,7 +74,7 @@ const RestaurantMenu = () => {
       price: "180",
       description: "Smooth espresso mixed with steamed milk.",
       badge: "Hot",
-      emoji: "☕",
+      image: "https://i.postimg.cc/XqH4063x/What-is-a-latte.webp",
     },
     {
       id: 9,
@@ -83,7 +83,7 @@ const RestaurantMenu = () => {
       price: "150",
       description: "Fresh fruit juice (Mango / Orange / Watermelon).",
       badge: "Cool",
-      emoji: "🥤",
+      image: "https://i.postimg.cc/B6SrZ7mh/Featured-Image-1-1.webp",
     },
   ];
 
@@ -101,14 +101,14 @@ const RestaurantMenu = () => {
       : menuItems.filter((item) => item.category === activeCategory);
 
   return (
-    <div className="min-h-screen py-12 px-4 bg-gray-50 dark:bg-gray-900">
+    <div className="min-h-screen py-12 px-4">
       <div className="max-w-11/12 mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-5xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-green-500 mb-4 tracking-wide">
             Our Menu
           </h1>
-          <p className="text-xl text-gray-600 dark:text-gray-300">
+          <p className="text-xl">
             A Taste of Perfection Awaits You 🍽️
           </p>
         </div>
@@ -135,11 +135,15 @@ const RestaurantMenu = () => {
           {filteredItems.map((item) => (
             <div
               key={item.id}
-              className="backdrop-blur-sm rounded-2xl overflow-hidden border border-gray-300 dark:border-gray-700 hover:border-green-500 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-green-500/20 group bg-white dark:bg-gray-800"
+              className="backdrop-blur-sm rounded-2xl overflow-hidden border border-green-300 dark:border-gray-700 hover:border-green-500 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-green-500/20 group bg-white dark:bg-gray-800"
             >
-              {/* Image / Emoji Section */}
-              <div className="h-48 bg-gradient-to-br from-green-500 to-green-500 flex items-center justify-center text-8xl group-hover:scale-110 transition-transform duration-300">
-                {item.emoji}
+              {/* Image Section */}
+              <div className="h-48 flex items-center justify-center overflow-hidden">
+                <img
+                  src={item.image}
+                  alt={item.name}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
               </div>
 
               {/* Content */}

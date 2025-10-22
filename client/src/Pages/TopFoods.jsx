@@ -10,7 +10,7 @@ import { AuthContext } from "../context/AuthContext";
 const TopFoods = () => {
   const [foods, setFoods] = useState([]);
   const [loading, setLoading] = useState(true);
-  const { darkMode } = useContext(AuthContext);
+  // const { darkMode } = useContext(AuthContext);
 
   useEffect(() => {
     AOS.init({ duration: 800, offset: 100, once: true }); // AOS setup
@@ -35,7 +35,7 @@ const TopFoods = () => {
   return (
     <div className="py-12">
       <motion.h2
-        className={`${darkMode ? "text-gray-300" : "text-green-500"} text-3xl text-center font-bold`}
+        className='text-3xl text-center font-bold'
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
@@ -65,16 +65,14 @@ const TopFoods = () => {
               <h3 className="text-xl font-semibold mt-5">{item.name}</h3>
               <p>🔊 Category: {item.category}</p>
               <p
-                className={`${
-                  darkMode ? "text-gray-400" : "text-gray-500"
-                } text-lg mt-1`}
+                className="mt-1"
               >
                 ⭐ Purchased:
                 <span className="btn bg-amber-300 text-black ml-2 h-5 w-10 rounded-2xl text-sm">
                   {item.purchaseCount}
                 </span>
               </p>
-              <p className="text-gray-400 text-sm mt-2">
+              <p className=" text-sm mt-2">
                 📒 {item.description.slice(0, 80)}...
               </p>
             </div>
