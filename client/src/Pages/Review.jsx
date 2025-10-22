@@ -58,9 +58,9 @@ function Reviews() {
           <div
             key={id}
             data-aos="zoom-in"
-            className="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col"
+            className=" p-6 rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col border border-transparent hover:border-green-500"
           >
-            <div className="flex items-center gap-4 mb-4">
+            <div className="flex items-center gap-4 mb-4 ">
               <img
                 src={image}
                 alt={name}
@@ -75,7 +75,7 @@ function Reviews() {
                     </span>
                   ))}
                   {[...Array(5 - rating)].map((_, i) => (
-                    <span key={i} className="text-gray-300 text-lg">
+                    <span key={i} className=" text-lg">
                       ★
                     </span>
                   ))}
@@ -84,7 +84,7 @@ function Reviews() {
             </div>
 
             {/* Review text */}
-            <p className="text-gray-600 italic leading-relaxed flex-grow">
+            <p className=" italic leading-relaxed flex-grow">
               “{review}”
             </p>
           </div>

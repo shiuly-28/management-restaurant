@@ -40,17 +40,17 @@ function SalesPromotion() {
                 {promotions.map((promo, index) => (
                     <motion.div
                         key={index}
-                        className="bg-white p-5 rounded shadow cursor-pointer"
+                        className="border border-transparent hover:border-green-500 p-5 rounded-2xl shadow cursor-pointer"
                         whileHover={{ scale: 1.05 }}
                         transition={{ type: "spring", stiffness: 200, damping: 10 }}
                     >
                         <img
                             src={promo.img}
                             alt={promo.title}
-                            className="w-full h-60 object-cover  rounded mb-4"
+                            className="w-full h-60 object-cover  rounded-2xl mb-4"
                         />
-                        <h3 className={`${darkMode ? "text-gray-300" : "text-black"}  text-center font-bold text-2xl`}>{promo.title}</h3>
-                        <p className={`${darkMode ? "text-gray-300" : "text-black"}  text-center font-bold `}>{promo.desc}</p>
+                        <h3 className= "text-center font-bold text-2xl">{promo.title}</h3>
+                        <p className="text-center font-bold text-2xl">{promo.desc}</p>
 
                     </motion.div>
                 ))}

@@ -16,7 +16,7 @@ const Footer = () => {
         setEmail("");
     }
     return (
-        <footer className="bg-base-200 text-base-content px-4 py-10">
+        <footer className="bg-base-200 text-base-content px-4 py-10 mt-8">
             <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
                 {/* Logo & Description */}
                 <div>

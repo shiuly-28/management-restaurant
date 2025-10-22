@@ -91,7 +91,7 @@ export default function FreshFood() {
       <div className="max-w-11/12 mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
-          <h1 className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-500 mb-4">
+          <h1 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-emerald-500 mb-4">
             Popular Restaurant Features
           </h1>
           <p className="text-lg max-w-3xl mx-auto">
@@ -106,7 +106,8 @@ export default function FreshFood() {
             return (
               <div
                 key={feature.id}
-                className="relative rounded-2xl overflow-hidden shadow-2xl group transform transition-transform duration-300 hover:scale-105" data-aos="zoom-in"
+                className="relative rounded-2xl overflow-hidden shadow-2xl group transform transition-transform
+                 duration-300 hover:scale-105 border border-transparent hover:border-green-500 p-5" data-aos="zoom-in"
                 onMouseEnter={() => setHoveredCard(feature.id)}
                 onMouseLeave={() => setHoveredCard(null)}
                 style={{ animationDelay: `${index * 100}ms` }}

@@ -18,16 +18,18 @@ const MyOrders = () => {
 
         if (user?.email) {
             setLoading(true);
-            fetch(`https://assignment-11-server-resturent.vercel.app/orders?email=${user.email}`, { credentials: 'include' })
-                .then(res => res.json())
-                .then(data => {
-                    setOrders(data);
-                    setLoading(false);
-                })
-                .catch(error => {
-                    console.error("Error fetching user listings:", error);
-                    setLoading(false);
-                });
+            fetch(`https://assignment-11-server-resturent.vercel.app/resturent-email?email=${user.email}`, {
+  credentials: 'include'
+})
+  .then(res => res.json())
+  .then(data => {
+    setOrders(data);
+    setLoading(false);
+  })
+  .catch(error => {
+    console.error("Error fetching user listings:", error);
+    setLoading(false);
+  });
         }
     }, [user]);
 

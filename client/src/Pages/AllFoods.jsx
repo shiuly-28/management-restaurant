@@ -67,7 +67,7 @@ const AllFoods = () => {
           {foods.map((item, index) => (
             <div
               key={item._id}
-              className="p-4 bg-base-100 rounded-xl shadow-md hover:shadow-xl transition-all duration-500"
+              className="p-4 bg-base-100 rounded-xl shadow-md hover:shadow-xl transition-all duration-500 border border-transparent hover:border-green-500"
               data-aos="fade-up"
               data-aos-delay={index * 100}
             >

@@ -7,6 +7,7 @@ import SalesPromotion from './SalesPromotion';
 import Review from './Review';
 import RestaurantHero from './RestaurantHero/RestaurantHero';
 import FreshFood from './FreshFood/FreshFood';
+import NewsLetter from './NewsLetter/NewsLetter';
 
 const Home = () => {
 
@@ -34,6 +35,9 @@ const Home = () => {
             </section> */}
             <section className='mt-8'>
                 <PopularCategories></PopularCategories>
+            </section>
+            <section>
+                <NewsLetter></NewsLetter>
             </section>
         </div>
     );

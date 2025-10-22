@@ -22,7 +22,7 @@ const PopularCategories = () => {
   ];
 
   return (
-    <div className="py-14">
+    <div className="py-14 max-w-11/12 mx-auto">
       <h2 className={`${darkMode ? "text-gray-300" : "text-black"} text-3xl text-center font-semibold`}>
         <span className="text-green-500 mr-2">
           <Typewriter

@@ -33,7 +33,7 @@ const MyFoodUpdated = () => {
     }
 
     return (
-        <div className="max-w-3xl mx-auto p-4">
+        <div className="max-w-3xl mx-auto p-4 mt-20">
 
             <h2 className={`${darkMode ? "text-gray-300" : "text-black"} text-3xl font-semibold text-center`}>Update Food Item</h2>
             <form onSubmit={handleUpdatedResturent} className="grid mt-5 gap-4">

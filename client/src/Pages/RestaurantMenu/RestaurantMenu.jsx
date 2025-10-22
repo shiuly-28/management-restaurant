@@ -135,7 +135,8 @@ const RestaurantMenu = () => {
           {filteredItems.map((item) => (
             <div
               key={item.id}
-              className="backdrop-blur-sm rounded-2xl overflow-hidden border border-green-300 dark:border-gray-700 hover:border-green-500 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-green-500/20 group bg-white dark:bg-gray-800"
+              className="backdrop-blur-sm rounded-2xl overflow-hidden border border-green-300 dark:border-gray-700 hover:border-green-500
+               transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-green-500/20 group dark:bg-gray-800"
             >
               {/* Image Section */}
               <div className="h-48 flex items-center justify-center overflow-hidden">
@@ -149,15 +150,15 @@ const RestaurantMenu = () => {
               {/* Content */}
               <div className="p-6">
                 <div className="flex justify-between items-start mb-3">
-                  <h3 className="text-2xl font-bold text-gray-800 dark:text-white group-hover:text-green-400 transition-colors">
+                  <h3 className="text-2xl font-bold  dark:text-white group-hover:text-green-400 transition-colors">
                     {item.name}
                   </h3>
-                  <span className="text-2xl font-bold text-green-500">
+                  <span className="text-2xl font-bold ">
                     {item.price} ৳
                   </span>
                 </div>
 
-                <p className="text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">
+                <p className=" mb-4 leading-relaxed">
                   {item.description}
                 </p>
 

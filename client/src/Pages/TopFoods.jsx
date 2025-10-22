@@ -35,7 +35,7 @@ const TopFoods = () => {
   return (
     <div className="py-12">
       <motion.h2
-        className='text-3xl text-center font-bold'
+        className='text-3xl text-center text-green-500 font-bold'
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
@@ -50,7 +50,8 @@ const TopFoods = () => {
             key={item._id}
             data-aos="fade-up"
             data-aos-delay={idx * 100}
-            className="p-4 bg-base-100 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col justify-between"
+            className="p-4 bg-base-100 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300
+             flex flex-col justify-between border border-transparent hover:border-green-500"
           >
             <div className="flex-1">
               {/* 🔹 Image with hover zoom effect */}
