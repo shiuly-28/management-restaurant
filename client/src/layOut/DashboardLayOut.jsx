@@ -35,6 +35,11 @@ const DashboardLayout = () => {
                             <FaShoppingCart /> My Orders
                         </Link>
                     </li>
+                    <li>
+                        <Link to="/dashboard/analytics" className="flex items-center gap-2 hover:bg-green-600 p-2 rounded">
+                            <FaShoppingCart /> Rechart
+                        </Link>
+                    </li>
                 </ul>
             </div>
 

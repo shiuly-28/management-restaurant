@@ -22,6 +22,7 @@ import AddFood from '../Dashboard/AddFood';
 import MyFood from '../Dashboard/myFood';
 import MyOrders from '../Dashboard/MyOrders';
 import RestaurantMenu from '../Pages/RestaurantMenu/RestaurantMenu';
+import DashboardAnalytics from '../Dashboard/DashboardAnalytics/DashboardAnalytics';
 
 
 // import Testimonials from '../Pages/Testimonials';
@@ -117,6 +118,10 @@ const router = createBrowserRouter([
                     <MyOrders></MyOrders>
                 </PrivateRoute>
             },
+            {
+                path: "analytics",
+                element: <DashboardAnalytics></DashboardAnalytics>
+            }
 
         ]
     },

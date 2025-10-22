@@ -54,6 +54,9 @@ const DashboardHome = () => {
                     <Link to="/dashboard/myProfile" className="bg-gray-700 text-white px-4 py-2 rounded hover:bg-gray-800">
                         View Profile
                     </Link>
+                    <Link to="/dashboard/analytics" className="bg-gray-700 text-white px-4 py-2 rounded hover:bg-gray-800">
+                        Rechart
+                    </Link>
                 </div>
             </div>
         </div>
