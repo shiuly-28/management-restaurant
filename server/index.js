@@ -18,7 +18,7 @@ app.use(cors({
 ;
 app.use(express.json());
 
-const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS }@clustersheauly.6uz8dzi.mongodb.net/?retryWrites=true&w=majority&appName=ClusterSheauly`;
+const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@clustersheauly.6uz8dzi.mongodb.net/?retryWrites=true&w=majority&appName=ClusterSheauly`;
 
 // const verifyToken = (req, res, next) => {
 //     const token = req.cookies.token;
@@ -164,6 +164,62 @@ async function run() {
     const result = await resturentCollection.find({ addedByEmail: email }).toArray();
      res.send(result);
     });
+
+ app.get("/analytics", async (req, res) => {
+  try {
+    console.log("Analytics endpoint hit");
+    
+    // Check if client exists
+    if (!client) {
+      throw new Error("MongoDB client not initialized");
+    }
+
+    const ordersCollection = client.db("Management_Resturent").collection("orders");
+    console.log("Collection accessed");
+
+    const orders = await ordersCollection.find().toArray();
+    console.log(`Found ${orders.length} orders`);
+
+    const totalOrders = orders.length;
+    
+    // Calculate total income with better error handling
+    const totalIncome = orders.reduce((sum, order) => {
+      const price = Number(order.price) || 0;
+      return sum + price;
+    }, 0);
+
+    // Count foods
+    const foodCount = {};
+    orders.forEach(order => {
+      if (order.name) {
+        const name = order.name;
+        foodCount[name] = (foodCount[name] || 0) + 1;
+      }
+    });
+
+    const topFoods = Object.entries(foodCount)
+      .map(([name, count]) => ({ name, count }))
+      .sort((a, b) => b.count - a.count)
+      .slice(0, 5);
+
+    const result = { 
+      totalOrders, 
+      totalIncome: totalIncome.toFixed(2),
+      topFoods 
+    };
+
+    console.log("Sending response:", result);
+    res.json(result);
+    
+  } catch (error) {
+    console.error("❌ Analytics error:", error.message);
+    console.error("Full error:", error);
+    res.status(500).json({ 
+      message: "Error fetching analytics data", 
+      error: error.message 
+    });
+  }
+});
 
 
 
