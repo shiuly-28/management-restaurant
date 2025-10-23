@@ -1,5 +1,5 @@
 import { Outlet, Link } from "react-router-dom";
-import { FaHome, FaUser, FaPlusCircle, FaUtensils, FaShoppingCart } from "react-icons/fa";
+import { FaHome, FaUser, FaPlusCircle, FaUtensils, FaShoppingCart, FaChartLine } from "react-icons/fa";
 
 const DashboardLayout = () => {
     return (
@@ -37,7 +37,7 @@ const DashboardLayout = () => {
                     </li>
                     <li>
                         <Link to="/dashboard/analytics" className="flex items-center gap-2 hover:bg-green-600 p-2 rounded">
-                            <FaShoppingCart /> Rechart
+                            <FaChartLine /> Rechart
                         </Link>
                     </li>
                 </ul>

@@ -43,7 +43,7 @@ const DashboardHome = () => {
 
             {/* Quick Actions */}
             <div className="bg-white p-5 rounded-lg shadow mt-6">
-                <h2 className="font-bold text-2xl">Quick Actions</h2>
+                <h2 className={`${darkMode ? "text-gray-300" : "text-black"} font-bold text-2xl`}>Quick Actions</h2>
                 <div className="flex flex-wrap mt-3 gap-3">
                     <Link to="/dashboard/addFood" className="bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700">
                         AddFood

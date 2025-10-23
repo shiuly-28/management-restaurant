@@ -1,10 +1,13 @@
+import { useContext } from "react";
 import { useEffect, useState } from "react";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from "recharts";
+import { AuthContext } from "../../context/AuthContext";
 
 const DashboardAnalytics = () => {
   const [analytics, setAnalytics] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const {darkMode} = useContext(AuthContext)
 
   useEffect(() => {
     const fetchAnalytics = async () => {
@@ -46,11 +49,11 @@ const DashboardAnalytics = () => {
 
   return (
     <div className="max-w-5xl mx-auto mt-10 p-4 space-y-8">
-      <h2 className="text-3xl font-bold text-center">📊 Dashboard Analytics</h2>
+      <h2 className={`${darkMode ? "text-white" : "text-black"} text-3xl font-semibold text-center`}>📊 Dashboard Analytics</h2>
 
       <div className="grid md:grid-cols-3 gap-6 text-center">
-        <div className="bg-green-100 p-5 rounded-xl shadow">
-          <h3 className="text-xl font-semibold">Total Orders</h3>
+        <div className="bg-green-500 p-5 rounded-xl shadow">
+          <h3 className="text-xl font-semibold text-black">Total Orders</h3>
           <p className="text-3xl font-bold text-green-600">{analytics.totalOrders}</p>
         </div>
         <div className="bg-yellow-100 p-5 rounded-xl shadow">
@@ -69,7 +72,7 @@ const DashboardAnalytics = () => {
       </div>
 
       {/* Chart Section */}
-      <div className="bg-white p-6 rounded-xl shadow">
+      <div className="p-6 rounded-xl shadow">
         <h3 className="text-xl font-semibold mb-4 text-center">Top Selling Foods</h3>
         {analytics.topFoods && analytics.topFoods.length > 0 ? (
           <ResponsiveContainer width="100%" height={300}>
@@ -83,7 +86,7 @@ const DashboardAnalytics = () => {
             </BarChart>
           </ResponsiveContainer>
         ) : (
-          <p className="text-center text-gray-500">No order data available</p>
+          <p className="text-center text-green-500">No order data available</p>
         )}
       </div>
     </div>
