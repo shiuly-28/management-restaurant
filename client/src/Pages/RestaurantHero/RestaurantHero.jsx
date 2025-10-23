@@ -43,7 +43,7 @@ const RestaurantHero = () => {
           <h2 className="text-4xl lg:text-5xl font-bold mt-3 mb-4">
             Frequently Asked <span className="text-green-500">Questions</span>
           </h2>
-          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+          <p className=" text-lg max-w-2xl mx-auto">
             Find answers to common questions about our restaurant, services, and menu offerings.
           </p>
         </div>

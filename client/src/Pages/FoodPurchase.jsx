@@ -42,8 +42,8 @@ const FoodPurchase = () => {
 
     return (
         <div>
-            <form onSubmit={handleSubmit} className="max-w-3xl mx-auto space-y-4 mt-10 bg-white p-6 rounded-lg shadow">
-                <h2 className={`${darkMode ? "text-black" : "text-black"} text-lg`}>Resturent Management</h2>
+            <form onSubmit={handleSubmit} className="max-w-3xl mx-auto space-y-4 mt-25  p-6 rounded-lg shadow">
+                <h2 className={`${darkMode ? "text-green" : "text-green"} text-lg`}>Resturent Management</h2>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <input name="name" readOnly value={purchesFood.name} className="input input-bordered" />
@@ -73,7 +73,7 @@ const FoodPurchase = () => {
                     required
                 ></textarea>
 
-                <button type="submit" className="btn btn-success w-full">Food</button>
+                <button type="submit" className="btn btn-success w-full text-white text-2xl ">Food</button>
             </form>
         </div>
     );
