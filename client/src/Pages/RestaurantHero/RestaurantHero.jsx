@@ -97,18 +97,7 @@ const RestaurantHero = () => {
           </div>
         </div>
 
-        {/* Bottom CTA */}
-        <div className="mt-12 text-center p-8 bg-gradient-to-r from-green-50 to-green-100 rounded-2xl" data-aos="fade-up">
-          <h3 className="text-2xl font-bold text-gray-800 mb-3">
-            Still Have Questions?
-          </h3>
-          <p className="text-gray-600 mb-6">
-            Our friendly team is here to help you. Feel free to reach out!
-          </p>
-          <button className="bg-green-500 hover:bg-green-600 text-white font-bold px-8 py-4 rounded-lg transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl uppercase tracking-wide">
-            Contact Us
-          </button>
-        </div>
+       
       </div>
     </div>
   );
