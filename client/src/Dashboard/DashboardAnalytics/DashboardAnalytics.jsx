@@ -54,15 +54,15 @@ const DashboardAnalytics = () => {
       <div className="grid md:grid-cols-3 gap-6 text-center">
         <div className="bg-green-500 p-5 rounded-xl shadow">
           <h3 className="text-xl font-semibold text-black">Total Orders</h3>
-          <p className="text-3xl font-bold text-green-600">{analytics.totalOrders}</p>
+          <p className="text-3xl font-bold text-black">{analytics.totalOrders}</p>
         </div>
         <div className="bg-yellow-100 p-5 rounded-xl shadow">
-          <h3 className="text-xl font-semibold">Total Income</h3>
-          <p className="text-3xl font-bold text-yellow-600">${analytics.totalIncome}</p>
+          <h3 className="text-xl font-semibold text-black">Total Income</h3>
+          <p className="text-3xl font-bold text-black">${analytics.totalIncome}</p>
         </div>
         <div className="bg-blue-100 p-5 rounded-xl shadow">
-          <h3 className="text-xl font-semibold">Top Foods</h3>
-          <p className="text-md font-medium">
+          <h3 className="text-xl font-semibold text-black">Top Foods</h3>
+          <p className="text-md text-black font-medium">
             {analytics.topFoods && analytics.topFoods.length > 0 
               ? analytics.topFoods.map(f => f.name).join(", ")
               : "No data available"
@@ -73,7 +73,7 @@ const DashboardAnalytics = () => {
 
       {/* Chart Section */}
       <div className="p-6 rounded-xl shadow">
-        <h3 className="text-xl font-semibold mb-4 text-center">Top Selling Foods</h3>
+        <h3 className="text-xl font-semibold mb-4 text-center text-black">Top Selling Foods</h3>
         {analytics.topFoods && analytics.topFoods.length > 0 ? (
           <ResponsiveContainer width="100%" height={300}>
             <BarChart data={analytics.topFoods}>

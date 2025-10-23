@@ -67,7 +67,7 @@ const AddFood = () => {
 
 
                 <div className='grid '>
-                    <label className={`${darkMode ? "text-gray-300" : "text-black"} text-lg`}>buyingDate</label>
+                    <label className={`${darkMode ? "text-gray-300" : "text-black"} text-lg`}>BuyingDate</label>
                     <DatePicker
                         selected={selectedDate}
                         onChange={(date) => setSelectedDate(date)}
@@ -80,7 +80,7 @@ const AddFood = () => {
                 </div>
 
 
-                <input type="submit" className="btn btn-primary mt-3" value="Add Food" />
+                <input type="submit" className="btn btn-active btn-success text-white mt-3" value="Add Food" />
 
             </form>
         </div>
