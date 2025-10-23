@@ -142,7 +142,7 @@ const MyFood = () => {
           <button
             onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
             disabled={currentPage === 1}
-            className="btn btn-sm btn-outline"
+            className="btn btn-sm btn-success"
           >
             Prev
           </button>
@@ -151,7 +151,7 @@ const MyFood = () => {
             <button
               key={num}
               onClick={() => setCurrentPage(num + 1)}
-              className={`btn btn-sm ${currentPage === num + 1 ? "btn-active btn-primary" : "btn-outline"}`}
+              className={`btn btn-sm ${currentPage === num + 1 ? "btn-active btn-primary" : "btn-success"}`}
             >
               {num + 1}
             </button>
@@ -160,7 +160,7 @@ const MyFood = () => {
           <button
             onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
             disabled={currentPage === totalPages}
-            className="btn btn-sm btn-outline"
+            className="btn btn-sm btn-success"
           >
             Next
           </button>
