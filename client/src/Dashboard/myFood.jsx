@@ -13,7 +13,7 @@ const MyFood = () => {
     useEffect(() => {
         if (user?.email) {
             setLoading(true);
-            fetch(`https://assignment-11-server-resturent.vercel.app/resturent-email?email=${user.email}`, { credentials: 'include' })
+            fetch(`http://localhost:3000/resturent-email?email=${user.email}`, { credentials: 'include' })
                 .then(res => res.json())
                 .then(data => {
                     setResturent(data);
@@ -37,7 +37,7 @@ const MyFood = () => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`https://assignment-11-server-resturent.vercel.app/resturent/${id}`, {
+                fetch(`http://localhost:3000/resturent/${id}`, {
                     method: "DELETE",
                     credentials: 'include',
                 })

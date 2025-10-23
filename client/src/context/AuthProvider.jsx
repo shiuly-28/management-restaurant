@@ -45,20 +45,20 @@ const AuthProvider = ({ children }) => {
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
             console.log(currentUser);
-            if (currentUser) {
+            // if (currentUser) {
 
-                fetch("https://assignment-11-server-resturent.vercel.app/jwt", {
-                    method: "POST",
-                    headers: {
-                        "content-type": "application/json"
-                    },
-                    credentials: "include",
-                    body: JSON.stringify(currentUser),
-                })
-                    .then((res) => console.log(res.json))
-                    .then((data) => console.log(data))
-                    .catch((err) => console.log(err));
-            }
+            //     fetch("http://localhost:3000/jwt", {
+            //         method: "POST",
+            //         headers: {
+            //             "content-type": "application/json"
+            //         },
+            //         credentials: "include",
+            //         body: JSON.stringify(currentUser),
+            //     })
+            //         .then((res) => console.log(res.json))
+            //         .then((data) => console.log(data))
+            //         .catch((err) => console.log(err));
+            // }
             setUser(currentUser);
             setLoading(false);
         });

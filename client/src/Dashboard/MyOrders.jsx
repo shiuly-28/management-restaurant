@@ -18,7 +18,7 @@ const MyOrders = () => {
 
         if (user?.email) {
             setLoading(true);
-            fetch(`https://assignment-11-server-resturent.vercel.app/resturent-email?email=${user.email}`, {
+            fetch(`http://localhost:3000/resturent-email?email=${user.email}`, {
   credentials: 'include'
 })
   .then(res => res.json())
@@ -45,7 +45,7 @@ const MyOrders = () => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`https://assignment-11-server-resturent.vercel.app/orders/${id}`, {
+                fetch(`http://localhost:3000/orders/${id}`, {
                     method: "DELETE",
                     credentials: 'include',
                 })

@@ -47,8 +47,8 @@ const Banner = () => {
     ];
 
     return (
-        <div className="w-full overflow-hidden">
-            <div className="carousel w-full overflow-hidden">
+        <div className="w-full overflow-hidden ">
+            <div className="carousel w-full overflow-hidden mt-12">
                 {slides.map((slide, index) => (
                     <div
                         id={`slide${slide.id}`}

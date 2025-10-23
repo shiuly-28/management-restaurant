@@ -18,7 +18,7 @@ const AllFoods = () => {
 
   useEffect(() => {
     setLoading(true);
-    fetch(`https://assignment-11-server-resturent.vercel.app/posts?search=${searchTerm}`)
+    fetch(`http://localhost:3000/posts?search=${searchTerm}`)
       .then((res) => res.json())
       .then((data) => {
         setFoods(data);
