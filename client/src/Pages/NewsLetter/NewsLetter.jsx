@@ -33,7 +33,7 @@ const NewsLetter = () => {
         <h2 className="text-2xl md:text-3xl font-bold text-green-700 dark:text-green-400">
           Subscribe to our newsletter
         </h2>
-        <p className="text-gray-600 dark:text-gray-300 mt-2 text-sm md:text-base">
+        <p className=" mt-2 text-sm md:text-base">
           Get exclusive food updates, offers, and tips directly to your inbox.
         </p>
       </div>
