@@ -10,7 +10,6 @@ import Register from '../Pages/Register';
 import Login from '../Pages/Login';
 import FoodPage from '../Pages/FoodPage';
 import AllFoods from '../Pages/AllFoods';
-
 import FoodPurchase from '../Pages/FoodPurchase';
 import PrivateRoute from '../context/PrivateRoute';
 import MyFoodUpdated from '../Pages/MyFoodUpdated';
@@ -23,11 +22,7 @@ import MyFood from '../Dashboard/myFood';
 import MyOrders from '../Dashboard/MyOrders';
 import RestaurantMenu from '../Pages/RestaurantMenu/RestaurantMenu';
 import DashboardAnalytics from '../Dashboard/DashboardAnalytics/DashboardAnalytics';
-
-
-// import Testimonials from '../Pages/Testimonials';
-
-
+import UpdateFood from '../Dashboard/UpdateFood/UpdateFood';
 
 const router = createBrowserRouter([
     {
@@ -46,7 +41,6 @@ const router = createBrowserRouter([
                 path: '/login',
                 element: <Login></Login>
             },
-
             {
                 path: 'gallery',
                 element: <Gallery></Gallery>
@@ -59,7 +53,6 @@ const router = createBrowserRouter([
                 path: '/menu',
                 element: <RestaurantMenu></RestaurantMenu>
             },
-
             {
                 path: '/foodPage/:id',
                 element: <FoodPage></FoodPage>,
@@ -72,19 +65,14 @@ const router = createBrowserRouter([
                 </PrivateRoute>,
                 loader: ({ params }) => fetch(`http://localhost:3000/resturent/${params.id}`, { credentials: 'include' })
             },
-
             {
                 path: '/myFoodUpdated/:id',
                 element: <PrivateRoute>
                     <MyFoodUpdated></MyFoodUpdated>
                 </PrivateRoute>,
                 loader: ({ params }) => fetch(`http://localhost:3000/resturent/${params.id}`),
-            },
-
-
-
+            }
         ]
-
     },
     {
         path: "/dashboard",
@@ -106,11 +94,7 @@ const router = createBrowserRouter([
             },
             {
                 path: 'myFood',
-
-                element:
-                    <MyFood></MyFood>
-
-
+                element: <MyFood></MyFood>
             },
             {
                 path: "myOrders",
@@ -121,8 +105,12 @@ const router = createBrowserRouter([
             {
                 path: "analytics",
                 element: <DashboardAnalytics></DashboardAnalytics>
+            },
+            {
+                path: "updateFood/:id",
+                element: <UpdateFood></UpdateFood>,
+                loader: ({ params }) => fetch(`http://localhost:3000/resturent/${params.id}`)
             }
-
         ]
     },
     {
@@ -130,6 +118,5 @@ const router = createBrowserRouter([
         element: <Error404></Error404>
     }
 ]);
-
 
 export default router;
