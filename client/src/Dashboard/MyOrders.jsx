@@ -18,7 +18,7 @@ const MyOrders = () => {
     useEffect(() => {
         if (user?.email) {
             setLoading(true);
-            fetch(`http://localhost:3000/resturent-email?email=${user.email}`, {
+            fetch(`https://assignment-11-server-resturent.vercel.app/resturent-email?email=${user.email}`, {
                 credentials: 'include'
             })
                 .then(res => res.json())
@@ -46,7 +46,7 @@ const MyOrders = () => {
             if (result.isConfirmed) {
                 setDeletingId(id);
                 
-                fetch(`http://localhost:3000/resturent/${id}`, {
+                fetch(`https://assignment-11-server-resturent.vercel.app/resturent/${id}`, {
                     method: "DELETE",
                     credentials: 'include',
                 })

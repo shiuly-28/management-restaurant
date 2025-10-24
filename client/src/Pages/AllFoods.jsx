@@ -31,7 +31,7 @@ const AllFoods = () => {
           category: categoryFilter
         });
 
-        const res = await fetch(`http://localhost:3000/posts?${params}`);
+        const res = await fetch(`https://assignment-11-server-resturent.vercel.app/posts?${params}`);
         
         if (!res.ok) {
           throw new Error(`HTTP error! status: ${res.status}`);

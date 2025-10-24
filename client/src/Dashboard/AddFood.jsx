@@ -34,7 +34,7 @@ const AddFood = () => {
         };
 
         try {
-            const res = await axios.post('http://localhost:3000/resturent', newFood);
+            const res = await axios.post('https://assignment-11-server-resturent.vercel.app/resturent', newFood);
             if (res.data.insertedId || res.data.acknowledged) {
                 Swal.fire('Success', 'Food item added!', 'success');
                 form.reset();
