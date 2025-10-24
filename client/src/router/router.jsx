@@ -57,21 +57,21 @@ const router = createBrowserRouter([
             {
                 path: '/foodPage/:id',
                 element: <FoodPage></FoodPage>,
-                loader: ({ params }) => fetch(`https://assignment-11-server-resturent.vercel.app/resturent/${params.id}`)
+                loader: ({ params }) => fetch(`http://localhost:3000/resturent/${params.id}`)
             },
             {
                 path: '/foodPurchase/:id',
                 element: <PrivateRoute>
                     <FoodPurchase></FoodPurchase>
                 </PrivateRoute>,
-                loader: ({ params }) => fetch(`https://assignment-11-server-resturent.vercel.app/resturent/${params.id}`, { credentials: 'include' })
+                loader: ({ params }) => fetch(`http://localhost:3000/resturent/${params.id}`, { credentials: 'include' })
             },
             {
                 path: '/myFoodUpdated/:id',
                 element: <PrivateRoute>
                     <MyFoodUpdated></MyFoodUpdated>
                 </PrivateRoute>,
-                loader: ({ params }) => fetch(`https://assignment-11-server-resturent.vercel.app/resturent/${params.id}`),
+                loader: ({ params }) => fetch(`http://localhost:3000/resturent/${params.id}`),
             },
             {
                 path: "/FeatureDetails/:id",
@@ -114,7 +114,7 @@ const router = createBrowserRouter([
             {
                 path: "updateFood/:id",
                 element: <UpdateFood></UpdateFood>,
-                loader: ({ params }) => fetch(`https://assignment-11-server-resturent.vercel.app/resturent/${params.id}`)
+                loader: ({ params }) => fetch(`http://localhost:3000/resturent/${params.id}`)
             }
         ]
     },

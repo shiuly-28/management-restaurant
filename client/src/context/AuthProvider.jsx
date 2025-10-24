@@ -47,7 +47,7 @@ const AuthProvider = ({ children }) => {
             console.log(currentUser);
             // if (currentUser) {
 
-            //     fetch("https://assignment-11-server-resturent.vercel.app/jwt", {
+            //     fetch("http://localhost:3000/jwt", {
             //         method: "POST",
             //         headers: {
             //             "content-type": "application/json"

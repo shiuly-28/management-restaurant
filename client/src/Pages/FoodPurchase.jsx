@@ -33,7 +33,7 @@ const FoodPurchase = () => {
         });
 
         // console.log(newFood);
-        axios.post('https://assignment-11-server-resturent.vercel.app/orders', newFood)
+        axios.post('http://localhost:3000/orders', newFood)
             .then(result => {
                 console.log(result.data);
             })

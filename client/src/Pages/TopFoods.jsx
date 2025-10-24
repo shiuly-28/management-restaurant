@@ -15,7 +15,7 @@ const TopFoods = () => {
   useEffect(() => {
     AOS.init({ duration: 800, offset: 100, once: true }); // AOS setup
 
-    fetch("https://assignment-11-server-resturent.vercel.app/resturent")
+    fetch("http://localhost:3000/resturent")
       .then((res) => res.json())
       .then((data) => {
         const allFoods = Array.isArray(data) ? data : data.foods || [];

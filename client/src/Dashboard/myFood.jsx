@@ -41,7 +41,7 @@ const MyFood = () => {
       confirmButtonText: "Yes, delete it!"
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`https://assignment-11-server-resturent.vercel.app/resturent/${id}`, {
+        fetch(`http://localhost:3000/resturent/${id}`, {
           method: "DELETE",
           credentials: 'include',
         })

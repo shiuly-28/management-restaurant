@@ -23,7 +23,7 @@ const UpdateFood = () => {
     console.log('Updated data:', updatedFood);
 
     try {
-      const response = await fetch(`https://assignment-11-server-resturent.vercel.app/resturent/${food._id}`, {
+      const response = await fetch(`http://localhost:3000/resturent/${food._id}`, {
         method: "PATCH", // Try PATCH instead of PUT
         headers: { 
           "Content-Type": "application/json" 
