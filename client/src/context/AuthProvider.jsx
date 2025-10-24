@@ -47,7 +47,7 @@ const AuthProvider = ({ children }) => {
             console.log(currentUser);
             // if (currentUser) {
 
-            //     fetch("http://localhost:3000/jwt", {
+            //     fetch("https://management-restaurant-lzgp.vercel.app/jwt", {
             //         method: "POST",
             //         headers: {
             //             "content-type": "application/json"

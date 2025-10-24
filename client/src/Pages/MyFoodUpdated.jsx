@@ -17,7 +17,7 @@ const MyFoodUpdated = () => {
         const form = e.target;
         const formData = new FormData(form);
         const updatedFood = Object.fromEntries(formData.entries());
-        axios.patch(`http://localhost:3000/resturent/${_id}`, updatedFood, { withCredentials: true })
+        axios.patch(`https://management-restaurant-lzgp.vercel.app/resturent/${_id}`, updatedFood, { withCredentials: true })
             .then(res => {
                 if (res.data.modifiedCount > 0) {
                     Swal.fire({

@@ -13,7 +13,7 @@ const DashboardAnalytics = () => {
     const fetchAnalytics = async () => {
       try {
         setLoading(true);
-        const res = await fetch("http://localhost:3000/analytics");
+        const res = await fetch("https://management-restaurant-lzgp.vercel.app/analytics");
         
         if (!res.ok) {
           throw new Error(`HTTP error! status: ${res.status}`);
