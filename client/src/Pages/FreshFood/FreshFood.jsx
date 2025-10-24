@@ -7,6 +7,7 @@ import {
   BellAlertIcon,
   CogIcon
 } from '@heroicons/react/24/outline';
+import { Link } from 'react-router-dom';
 
 const features = [
   {
@@ -87,7 +88,7 @@ export default function FreshFood() {
   const [hoveredCard, setHoveredCard] = useState(null);
 
   return (
-    <div className="py-20 px-4">
+    <div className="py-20 px-4 ">
       <div className="max-w-11/12 mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
@@ -154,9 +155,12 @@ export default function FreshFood() {
                     {/* Price & Button */}
                     <div className="flex items-center justify-between">
                       <span className="text-2xl font-bold text-green-400">{feature.price}</span>
-                      <button className="bg-gradient-to-r from-green-500 to-emerald-600 text-white px-6 py-2 rounded-full font-semibold hover:shadow-lg hover:shadow-green-500/50 transition-all duration-300 transform hover:scale-105">
-                        Try Now →
-                      </button>
+                      <Link 
+                        to={`/FeatureDetails/${feature.id}`}
+                        className="bg-gradient-to-r from-green-500 to-emerald-600 text-white px-6 py-2 rounded-full font-semibold hover:shadow-lg hover:shadow-green-500/50 transition-all duration-300 transform hover:scale-105"
+                      >
+                        See More →
+                      </Link>
                     </div>
                   </div>
                 </div>

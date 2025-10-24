@@ -23,6 +23,7 @@ import MyOrders from '../Dashboard/MyOrders';
 import RestaurantMenu from '../Pages/RestaurantMenu/RestaurantMenu';
 import DashboardAnalytics from '../Dashboard/DashboardAnalytics/DashboardAnalytics';
 import UpdateFood from '../Dashboard/UpdateFood/UpdateFood';
+import FeatureDetails from '../Pages/FeatureDetails/FeatureDetails';
 
 const router = createBrowserRouter([
     {
@@ -71,6 +72,10 @@ const router = createBrowserRouter([
                     <MyFoodUpdated></MyFoodUpdated>
                 </PrivateRoute>,
                 loader: ({ params }) => fetch(`http://localhost:3000/resturent/${params.id}`),
+            },
+            {
+                path: "/FeatureDetails/:id",
+                element: <FeatureDetails></FeatureDetails>
             }
         ]
     },
