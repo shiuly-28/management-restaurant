@@ -17,7 +17,7 @@ const MyFood = () => {
   useEffect(() => {
     if (user?.email) {
       setLoading(true);
-      fetch(`-email?email=${user.email}`, { credentials: 'include' })
+      fetch(`https://management-restaurant-lzgp.vercel.app/resturent-email?email=${user.email}`, { credentials: 'include' })
         .then(res => res.json())
         .then(data => {
           setResturent(data);
