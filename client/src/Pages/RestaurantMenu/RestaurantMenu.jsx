@@ -153,12 +153,12 @@ const RestaurantMenu = () => {
                   <h3 className="text-2xl font-bold  dark:text-white group-hover:text-green-400 transition-colors">
                     {item.name}
                   </h3>
-                  <span className="text-2xl font-bold ">
+                  <span className="text-2xl text-white font-bold ">
                     {item.price} ৳
                   </span>
                 </div>
 
-                <p className=" mb-4 leading-relaxed">
+                <p className="text-white mb-4 leading-relaxed">
                   {item.description}
                 </p>
 

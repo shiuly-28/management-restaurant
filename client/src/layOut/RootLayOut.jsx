@@ -6,10 +6,10 @@ import Footer from '../Component/Footer';
 const RootLayOut = () => {
     return (
         <div>
-            <header className='w-11/12 mx-auto rounded-2xl mt-5'>
+            <header className='rounded-2xl mt-5'>
             <Navbar></Navbar>
             </header>
-            <main className='w-11/12 mx-auto min-h-screen mt-5 '>
+            <main className=' min-h-screen mt-5 overflow-hidden'>
                 <Outlet></Outlet>
             </main>
             <footer>

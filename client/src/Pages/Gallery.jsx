@@ -23,13 +23,13 @@ const Gallery = () => {
     const slides = images.map(src => ({ src }));
 
     return (
-        <div>
+        <div className="">
             <Helmet>
                 <title>Management Resturent || Gellary</title>
             </Helmet>
             {/* Page Title Banner */}
             <div
-                className="relative h-60 md:h-150 bg-cover bg-center flex items-center text-white justify-center mt-16"
+                className="relative h-60 md:h-150 bg-cover bg-center flex items-center text-white justify-center"
                 style={{
                     backgroundImage: "url('https://i.postimg.cc/YCRb4PRP/Black-and-Orange-Modern-Food-Vlogger-You-Tube-Banner.png')"
                 }}
